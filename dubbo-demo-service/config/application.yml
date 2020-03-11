@@ -5,8 +5,23 @@ spring:
     active: default
 
   datasource:
-    url: jdbc:mysql://localhost:3306/dubbo_demo?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true
+    url: jdbc:mysql://localhost:3306/dubbo_demo?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai&autoReconnect=true
     username: jitao
     password: 'jitao.tech'
 
     initialization-mode: always
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  dubbo:
+    scan:
+      base-packages: tech.jitao.dubbodemo.service.service
+    protocol:
+      name: dubbo
+      host: 127.0.0.1
+      port: 12345
+
+    registry:
+      address: 'N/A'

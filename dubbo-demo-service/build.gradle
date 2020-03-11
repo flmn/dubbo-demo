@@ -10,8 +10,9 @@ dependencies {
     implementation(
             libraries.sb_core,
             libraries.sb_jpa,
+            libraries.sb_dubbo,
 
-            project(':dubbo-demo-interface'),
+            project(':dubbo-demo-api'),
     )
 
     runtimeOnly(

@@ -9,7 +9,8 @@ bootJar {
 dependencies {
     implementation(
             libraries.sb_web,
+            libraries.sb_dubbo,
 
-            project(':dubbo-demo-interface'),
+            project(':dubbo-demo-api'),
     )
 }

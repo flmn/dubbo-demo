@@ -1,5 +1,5 @@
 rootProject.name = 'dubbo-demo'
 
+include 'dubbo-demo-api'
 include 'dubbo-demo-bff'
-include 'dubbo-demo-interface'
 include 'dubbo-demo-service'
