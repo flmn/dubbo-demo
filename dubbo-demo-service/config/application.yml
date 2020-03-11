@@ -16,8 +16,6 @@ spring:
       ddl-auto: update
 
   dubbo:
-    scan:
-      base-packages: tech.jitao.dubbodemo.service.service
     protocol:
       name: dubbo
       host: 127.0.0.1
