@@ -1,0 +1,55 @@
+plugins {
+    id 'base'
+    id 'idea'
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'nebula.ospackage' version '8.1.0'
+}
+
+apply from: 'libraries.gradle'
+
+def VERSION = new Date().format('yyyy.MM.dd')
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'idea'
+    apply plugin: 'nebula.ospackage'
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+    group = 'dubbo-demo'
+    version = VERSION
+
+    repositories {
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public/" }
+        mavenCentral()
+        jcenter()
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public/" }
+        mavenCentral()
+        jcenter()
+    }
+    
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:all"
+        }
+    }
+}
+
+idea.project {
+    jdkName = '1.8'
+    languageLevel = '1.8'
+}
+
+wrapper {
+    gradleVersion = '6.2.2'
+}

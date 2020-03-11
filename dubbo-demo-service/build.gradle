@@ -1,0 +1,24 @@
+springBoot {
+    buildInfo()
+}
+
+bootJar {
+    launchScript()
+}
+
+dependencies {
+    implementation(
+            libraries.sb_core,
+            libraries.sb_jpa,
+
+            project(':dubbo-demo-interface'),
+    )
+
+    runtimeOnly(
+            libraries.mysql,
+    )
+
+    testImplementation(
+            libraries.sb_test,
+    )
+}

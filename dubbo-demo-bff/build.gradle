@@ -1,0 +1,15 @@
+springBoot {
+    buildInfo()
+}
+
+bootJar {
+    launchScript()
+}
+
+dependencies {
+    implementation(
+            libraries.sb_web,
+
+            project(':dubbo-demo-interface'),
+    )
+}

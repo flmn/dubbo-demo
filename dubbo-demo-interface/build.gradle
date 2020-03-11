@@ -1,0 +1,18 @@
+jar {
+    enabled = true
+}
+
+bootJar {
+    enabled = false
+}
+
+dependencies {
+    api(
+            libraries.guava,
+            libraries.commons_lang
+    )
+
+    testImplementation(
+            libraries.sb_test,
+    )
+}

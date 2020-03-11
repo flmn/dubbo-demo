@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: dubbo-demo-service
+  profiles:
+    active: default
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/dubbo_demo?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true
+    username: jitao
+    password: 'jitao.tech'
+
+    initialization-mode: always
