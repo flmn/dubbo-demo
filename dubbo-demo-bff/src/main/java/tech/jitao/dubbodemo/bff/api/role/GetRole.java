@@ -16,7 +16,7 @@ import tech.jitao.dubbodemo.bff.common.request.IntegerIdRequest;
 public class GetRole {
     static final String PATH = "/role/get-role";
 
-    @Reference(version = "1.0.0", url = "dubbo://127.0.0.1:12345")
+    @Reference(version = "1.0.0")
     private RoleService roleService;
 
     @PostMapping(PATH)

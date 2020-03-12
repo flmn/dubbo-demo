@@ -15,11 +15,11 @@ spring:
     hibernate:
       ddl-auto: update
 
-  dubbo:
-    protocol:
-      name: dubbo
-      host: 127.0.0.1
-      port: 12345
+dubbo:
+  protocol:
+    name: dubbo
+    host: 127.0.0.1
+    port: 12345
 
-    registry:
-      address: 'N/A'
+  registry:
+    address: 'multicast://224.5.6.7:23456'

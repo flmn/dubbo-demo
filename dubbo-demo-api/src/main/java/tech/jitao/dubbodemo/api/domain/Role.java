@@ -1,8 +1,11 @@
 package tech.jitao.dubbodemo.api.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Role extends Audit {
+public class Role extends Audit implements Serializable {
+    private static final long serialVersionUID = -1460089072460097148L;
+
     private Integer id;
     private String name;
     private String description;

@@ -1,6 +1,10 @@
 package tech.jitao.dubbodemo.api.domain;
 
-public class Privilege {
+import java.io.Serializable;
+
+public class Privilege implements Serializable {
+    private static final long serialVersionUID = -4162441955122634513L;
+
     private String id;
     private String name;
 

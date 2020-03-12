@@ -1,9 +1,12 @@
 package tech.jitao.dubbodemo.api.domain;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Staff extends Audit {
+public class Staff extends Audit implements Serializable {
+    private static final long serialVersionUID = -5703644165370368109L;
+
     private Long id;
     private String username;
     private String password;
