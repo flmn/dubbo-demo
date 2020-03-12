@@ -1,5 +1,7 @@
 # Dubbo demo
 
+一个演示 Spring Boot 和 Dubbo 配合的例子。打算顺手实现一个 RBAC 模型。
+
 ## 配置数据库
 
 保证本机已安装好 MySQL。
