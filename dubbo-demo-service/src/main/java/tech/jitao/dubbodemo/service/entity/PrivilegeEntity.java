@@ -1,5 +1,7 @@
 package tech.jitao.dubbodemo.service.entity;
 
+import tech.jitao.dubbodemo.api.domain.Privilege;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,6 +18,17 @@ public class PrivilegeEntity {
     @Column(name = "name", length = 16, nullable = false)
     private String name;
 
+    @Column(name = "sort_order", nullable = false)
+    private Integer sortOrder = 0;
+
+    public Privilege toPrivilege() {
+        Privilege d = new Privilege();
+        d.setId(id);
+        d.setName(name);
+
+        return d;
+    }
+
     public String getId() {
         return id;
     }
@@ -30,5 +43,13 @@ public class PrivilegeEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(Integer sortOrder) {
+        this.sortOrder = sortOrder;
     }
 }

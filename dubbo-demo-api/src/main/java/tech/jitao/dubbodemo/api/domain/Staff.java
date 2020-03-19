@@ -13,9 +13,10 @@ public class Staff extends Audit implements Serializable {
     private String screenName;
     private String avatar;
     private String avatarUrl;
+    private String isLocked;
     private LocalDateTime lastLoginTime;
 
-    List<Role> roles;
+    private List<Role> roles;
 
     public Long getId() {
         return id;
@@ -63,6 +64,14 @@ public class Staff extends Audit implements Serializable {
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
+    }
+
+    public String getIsLocked() {
+        return isLocked;
+    }
+
+    public void setIsLocked(String isLocked) {
+        this.isLocked = isLocked;
     }
 
     public LocalDateTime getLastLoginTime() {

@@ -1,0 +1,25 @@
+POST http://localhost:8080/account/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password":"bad"
+}
+
+###
+
+POST http://localhost:8080/account/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password":"P@ssW0rd"
+}
+
+###
+
+POST http://localhost:8080/account/logout
+Content-Type: application/json
+X-Access-Token: D8d8lKFtXdQ15Y5VoZm2UHQI8UZGGk17kArOFR7I
+
+###

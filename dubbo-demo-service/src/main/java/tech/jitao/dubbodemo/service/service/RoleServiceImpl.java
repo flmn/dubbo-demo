@@ -3,12 +3,12 @@ package tech.jitao.dubbodemo.service.service;
 import org.apache.dubbo.config.annotation.Service;
 import tech.jitao.dubbodemo.api.domain.Role;
 import tech.jitao.dubbodemo.api.dto.CommonListRequest;
+import tech.jitao.dubbodemo.api.dto.ListResponse;
 import tech.jitao.dubbodemo.api.exception.NotFoundException;
 import tech.jitao.dubbodemo.api.service.RoleService;
 import tech.jitao.dubbodemo.service.entity.RoleEntity;
 import tech.jitao.dubbodemo.service.repository.RoleRepository;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service(version = "1.0.0")
@@ -20,7 +20,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public List<Role> listRoles(CommonListRequest request) {
+    public ListResponse<Role> listRoles(CommonListRequest request) {
         return null;
     }
 

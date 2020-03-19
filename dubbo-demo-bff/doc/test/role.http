@@ -1,3 +1,19 @@
+POST http://localhost:8080/role/list-privileges
+Content-Type: application/json
+
+###
+
+POST http://localhost:8080/role/create-role
+Content-Type: application/json
+
+{
+  "name": "name",
+  "description": "description",
+  "privileges": ["manage.manage-roles"]
+}
+
+###
+
 POST http://localhost:8080/role/get-role
 Content-Type: application/json
 

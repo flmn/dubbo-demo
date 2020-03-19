@@ -1,19 +1,20 @@
 package tech.jitao.dubbodemo.bff.common.request;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 
-public class PageRequest {
+public class PagingRequest {
+
+    @NotNull
+    @Positive
+    private Integer currentPage = 1;
 
     @NotNull
     @Min(1)
-    private Integer currentPage;
+    @Max(100)
+    private Integer pageSize = 15;
 
-    @NotNull
-    @Min(3)
-    @Max(30)
-    private Integer pageSize;
+    @Size(max = 32)
+    private String sort;
 
     public Integer getCurrentPage() {
         return currentPage;
@@ -29,5 +30,13 @@ public class PageRequest {
 
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
+    }
+
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 }

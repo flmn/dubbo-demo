@@ -3,7 +3,7 @@ package tech.jitao.dubbodemo.service.entity;
 import tech.jitao.dubbodemo.api.domain.Role;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "t_role", uniqueConstraints = {
@@ -25,7 +25,7 @@ public class RoleEntity extends AuditableEntity {
     @ManyToMany
     @JoinTable(name = "t_role_privilege", joinColumns = @JoinColumn(name = "role_id"),
             inverseJoinColumns = @JoinColumn(name = "privilege_id"))
-    private List<PrivilegeEntity> privileges;
+    private Set<PrivilegeEntity> privileges;
 
     public Role toRole() {
         Role d = new Role();
@@ -60,11 +60,11 @@ public class RoleEntity extends AuditableEntity {
         this.description = description;
     }
 
-    public List<PrivilegeEntity> getPrivileges() {
+    public Set<PrivilegeEntity> getPrivileges() {
         return privileges;
     }
 
-    public void setPrivileges(List<PrivilegeEntity> privileges) {
+    public void setPrivileges(Set<PrivilegeEntity> privileges) {
         this.privileges = privileges;
     }
 }

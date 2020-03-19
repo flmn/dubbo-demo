@@ -6,6 +6,7 @@ ext.libraries = [
         sb_core     : "org.springframework.boot:spring-boot-starter",
         sb_web      : "org.springframework.boot:spring-boot-starter-web",
         sb_jpa      : "org.springframework.boot:spring-boot-starter-data-jpa",
+        sb_redis    : "org.springframework.boot:spring-boot-starter-data-redis",
         sb_test     : "org.springframework.boot:spring-boot-starter-test",
         sb_dubbo    : "org.apache.dubbo:dubbo-spring-boot-starter:${versions.dubbo}",
         mysql       : "mysql:mysql-connector-java",

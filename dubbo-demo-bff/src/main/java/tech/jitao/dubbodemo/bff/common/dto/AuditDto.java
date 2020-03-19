@@ -1,24 +1,28 @@
-package tech.jitao.dubbodemo.service.entity;
+package tech.jitao.dubbodemo.bff.common.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import tech.jitao.dubbodemo.api.domain.Audit;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
-@MappedSuperclass
-public abstract class AuditableEntity extends VersionedEntity {
-
-    @Column(name = "create_time", nullable = false, columnDefinition = "timestamp default CURRENT_TIMESTAMP")
+public class AuditDto {
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createTime;
+    private Long createStaff;
 
-    @Column(name = "create_staff", nullable = false)
-    private Long createStaff = 0L;
-
-    @Column(name = "update_time", nullable = false, columnDefinition = "timestamp default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateTime;
+    private Long updateStaff;
 
-    @Column(name = "update_staff", nullable = false)
-    private Long updateStaff = 0L;
+    public AuditDto() {
+    }
+
+    public AuditDto(Audit m) {
+        createTime = m.getCreateTime();
+        createStaff = m.getCreateStaff();
+        updateTime = m.getUpdateTime();
+        updateStaff = m.getUpdateStaff();
+    }
 
     public LocalDateTime getCreateTime() {
         return createTime;

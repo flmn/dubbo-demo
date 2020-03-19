@@ -1,8 +1,10 @@
 package tech.jitao.dubbodemo.service.entity;
 
+import tech.jitao.dubbodemo.api.domain.Staff;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "t_staff")
@@ -25,13 +27,28 @@ public class StaffEntity extends AuditableEntity {
     @Column(name = "avatar", length = 128, nullable = false)
     private String avatar;
 
-    @Column(name = "last_login_time", nullable = false)
+    @Column(name = "is_locked", nullable = false)
+    private String isLocked;
+
+    @Column(name = "last_login_time")
     private LocalDateTime lastLoginTime;
 
     @ManyToMany
     @JoinTable(name = "t_staff_role", joinColumns = @JoinColumn(name = "staff_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private List<RoleEntity> roles;
+    private Set<RoleEntity> roles;
+
+    public Staff toStaff() {
+        Staff d = new Staff();
+        d.setId(id);
+        d.setUsername(username);
+        d.setScreenName(screenName);
+        d.setAvatar(avatar);
+        d.setIsLocked(isLocked);
+        d.setLastLoginTime(lastLoginTime);
+
+        return d;
+    }
 
     public Long getId() {
         return id;
@@ -73,6 +90,14 @@ public class StaffEntity extends AuditableEntity {
         this.avatar = avatar;
     }
 
+    public String getIsLocked() {
+        return isLocked;
+    }
+
+    public void setIsLocked(String isLocked) {
+        this.isLocked = isLocked;
+    }
+
     public LocalDateTime getLastLoginTime() {
         return lastLoginTime;
     }
@@ -81,11 +106,11 @@ public class StaffEntity extends AuditableEntity {
         this.lastLoginTime = lastLoginTime;
     }
 
-    public List<RoleEntity> getRoles() {
+    public Set<RoleEntity> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<RoleEntity> roles) {
+    public void setRoles(Set<RoleEntity> roles) {
         this.roles = roles;
     }
 }

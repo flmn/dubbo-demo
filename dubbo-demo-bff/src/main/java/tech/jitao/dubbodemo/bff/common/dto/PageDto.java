@@ -7,7 +7,7 @@ public class PageDto<T> {
     private static final PageDto<?> EMPTY = new PageDto<>();
 
     private List<T> items = Collections.emptyList();
-    private String nextPageToken;
+    private String next;
     private Long total;
 
     @SuppressWarnings("unchecked")
@@ -30,12 +30,12 @@ public class PageDto<T> {
         this.items = items;
     }
 
-    public String getNextPageToken() {
-        return nextPageToken;
+    public String getNext() {
+        return next;
     }
 
-    public void setNextPageToken(String nextPageToken) {
-        this.nextPageToken = nextPageToken;
+    public void setNext(String next) {
+        this.next = next;
     }
 
     public Long getTotal() {
